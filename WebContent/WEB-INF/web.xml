@@ -37,7 +37,7 @@
     <servlet-name>ProductIndex</servlet-name>
     <servlet-class>it.unisa.control.ProductIndex</servlet-class>
   </servlet>
-    
+  
   <servlet-mapping>
     <servlet-name>Order</servlet-name>
     <url-pattern>/order</url-pattern>
