@@ -57,7 +57,7 @@ public class Register extends HttpServlet {
 		}
 		
 		else if(!request.getParameter("password1").equals(request.getParameter("password2"))) {
-			request.getSession().setAttribute("incorrectPasswords", "true");
+			request.getSession().setAttribute("wrongPsw", "true");
 			response.sendRedirect("registerpage.jsp");
 		}
 		
