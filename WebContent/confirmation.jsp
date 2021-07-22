@@ -1,8 +1,3 @@
-<%@page import="it.unisa.model.UserModelDS"%>
-<%@page import="it.unisa.model.OrderModelDS"%>
-<%@page import="it.unisa.model.UserBean"%>
-<%@page import="it.unisa.model.OrderBean"%>
-<%@page import="it.unisa.model.OrderModel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -10,14 +5,6 @@
 	ProductBean product = (ProductBean) request.getAttribute("product");
 	Cart cart = (Cart) request.getSession().getAttribute("cart");
 	int subtotal = 0;
-%>
-
-<%
-	String currentuser = request.getRemoteUser();
-	UserModelDS userds = new UserModelDS();
-	UserBean user = (UserBean) userds.doRetrieveByKey(currentuser);
-	
-	OrderModel model = new OrderModelDS();
 %>
 
 <!DOCTYPE html>
