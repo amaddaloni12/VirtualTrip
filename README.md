@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="#"><img src="https://raw.githubusercontent.com/amaddaloni12/VirtualTrip/main/WebContent/img/logo.png" alt="VirtualTrip" width="200"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/amaddaloni12/VirtualTrip/main/WebContent/img/biglogo.png" alt="VirtualTrip" width="200"></a>
   <br>
   VirtualTrip
   <br>
