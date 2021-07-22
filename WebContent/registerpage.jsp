@@ -77,10 +77,10 @@
 							<div class="col-md-12 form-group">
 								<input type="password" class="form-control" id="password2" name="password2" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required>
 							</div>
-								<%if(request.getSession().getAttribute("incorrectPasswords")==("true")){ %>
+								<%if(request.getSession().getAttribute("wrongPsw")==("true")){ %>
 								<div class="col-md-12 form-group" style=Color:red>Le password inserite non combaciano</div>
 								<%
-								request.getSession().removeAttribute("incorrectPasswords");
+								request.getSession().removeAttribute("wrongPsw");
 								}else{ %>
 								<br><br>
 								<%} %>
