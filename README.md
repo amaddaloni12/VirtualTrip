@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="#"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="VirtualTrip" width="200"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/amaddaloni12/VirtualTrip/main/WebContent/img/fav.png" alt="VirtualTrip" width="200"></a>
   <br>
   VirtualTrip
   <br>
@@ -32,4 +32,4 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](https://raw.githubusercontent.com/amaddaloni12/VirtualTrip/main/WebContent/img/Capture.PNG)
