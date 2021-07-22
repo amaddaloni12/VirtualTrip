@@ -5,17 +5,14 @@
 	Collection<?> products = (Collection<?>) request.getAttribute("products");
 	if(products == null) {
 		response.sendRedirect("product");	
-		return;
-	}
+		return;}
 	
 	ProductBean product = (ProductBean) request.getAttribute("product");
-	
-	Cart cart = (Cart) request.getAttribute("cart");
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.ProductBean,it.unisa.model.Cart"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.ProductBean"%>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,16 +23,15 @@
 
 	<a href="indexAdmin.jsp">Home</a> 
 
-	<h2>Products</h2>
+	<h2>Prodotti</h2>
 	<a href="product">List</a>
 	<table border="1">
 		<tr>
-			<th>Code <a href="product?sort=code">Sort</a></th>
-			<th>Name <a href="product?sort=name">Sort</a></th>
-			<th>Description <a href="product?sort=description">Sort</a></th>
-			<th>Platform <a href="product?sort=platform">Sort</a></th>
+			<th>ID gioco <a href="product?sort=code">Sort</a></th>
+			<th>Nome <a href="product?sort=name">Sort</a></th>
+			<th>Descrizione <a href="product?sort=description">Sort</a></th>
+			<th>Piattaforma <a href="product?sort=platform">Sort</a></th>
 			<th>Software House <a href="product?sort=softhouse">Sort</a></th>
-			<th>Action</th>
 		</tr>
 		<%
 			if (products != null && products.size() != 0) {
@@ -51,33 +47,32 @@
 			<td><%=bean.getSofthouse()%></td>
 			<td><a href="product?action=delete&id=<%=bean.getCode()%>">Delete</a><br>
 				<a href="product?action=read&id=<%=bean.getCode()%>">Details</a><br>
-				<a href="product?action=addC&id=<%=bean.getCode()%>">Add to cart</a>
 				</td>
 		</tr>
-		<%
-				}
-			} else {
+		<%}
+		} else {
 		%>
 		<tr>
-			<td colspan="6">No products available</td>
+			<td colspan="6">Nessun prodotto disponibile</td>
 		</tr>
 		<%
 			}
 		%>
 	</table>
 	
-	<h2>Details</h2>
 	<%
 		if (product != null) {
 	%>
+	<h2>Dettagli</h2>
+	
 	<table border="1">
 		<tr>
-			<th>Code</th>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Price</th>
-			<th>Quantity</th>
-			<th>Platform</th>
+			<th>ID gioco</th>
+			<th>Nome</th>
+			<th>Descrizione</th>
+			<th>Prezzo</th>
+			<th>Numero di copie</th>
+			<th>Piattaforma</th>
 			<th>Software House</th>
 		</tr>
 		<tr>
@@ -93,23 +88,23 @@
 	<%
 		}
 	%>
-	<h2>Insert</h2>
+	<h2>Inserisci nuovo articolo</h2>
 	<form action="product" method="post">
 		<input type="hidden" name="action" value="insert"> 
 		
-		<label for="name">Name:</label><br> 
+		<label for="name">Nome:</label><br> 
 		<input name="name" type="text" maxlength="20" required placeholder="enter name"><br> 
 		
-		<label for="description">Description:</label><br>
+		<label for="description">Descrizione:</label><br>
 		<textarea name="description" maxlength="100" rows="3" required placeholder="enter description"></textarea><br>
 		
-		<label for="price">Price:</label><br> 
+		<label for="price">Prezzo:</label><br> 
 		<input name="price" type="number" min="0" value="0" required><br>
 
-		<label for="quantity">Quantity:</label><br> 
+		<label for="quantity">Numero di copie:</label><br> 
 		<input name="quantity" type="number" min="1" value="1" required><br>
 		
-		<label for="platform">Platform:</label><br> 
+		<label for="platform">Piattaforma:</label><br> 
 		<input name="platform" type="text" maxlength="20" required placeholder="enter platform"><br> 
 		
 		<label for="softhouse">Software House:</label><br> 
@@ -118,22 +113,5 @@
 
 		<input type="submit" value="Add"><input type="reset" value="Reset">
 	</form>
-	<% if(cart != null) { %>
-		<h2>Cart</h2>
-		<table border="1">
-		<tr>
-			<th>Name</th>
-			<th>Action</th>
-		</tr>
-		<% List<ProductBean> prodcart = cart.getProducts(); 	
-		   for(ProductBean beancart: prodcart) {
-		%>
-		<tr>
-			<td><%=beancart.getName()%></td>
-			<td><a href="product?action=deleteC&id=<%=beancart.getCode()%>">Delete from cart</a></td>
-		</tr>
-		<%} %>
-	</table>		
-	<% } %>	
 </body>
 </html>
