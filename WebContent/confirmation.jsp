@@ -109,7 +109,7 @@
                         int ordertotal = subtotal + shipping;
                         Date date = new Date();
                         String stringDate = date.toString();
-						%> 
+			%> 
 							
 							<tr>
 								<td>
