@@ -79,7 +79,7 @@
 							</div>
 							<div class="col-lg-7">
 								<div class="banner-img">
-									<a href="productpage.jsp?idProduct=<%=code%>"><img class="img-fluid" src="img/games/<%=bean.getCode()%>/small.png" alt=""></a>
+									<a href="productpage.jsp?idProduct=<%=code%>"><img style="border-radius: 14px"class="img-fluid" src="img/games/<%=bean.getCode()%>/small.png" alt=""></a>
 								</div>
 							</div>
 						</div>
